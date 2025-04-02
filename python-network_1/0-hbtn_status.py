@@ -1,20 +1,12 @@
 #!/usr/bin/python3
-"""
-The documentation
-Fetches data from the url using
-the urllib module in python
-"""
-
+""" Python script that fetches https://intranet.hbtn.io/status """
 import urllib.request
 
-url = 'https://intranet.hbtn.io/status'
-if url.startswith('https://'):
-        url = 'https://alu-intranet.hbtn.io/status'
 
-        if __name__ == '__main__':
-                with urllib.request.urlopen(url) as f:
-                            content = f.read()
-                                    print("Body response:")
-                                            print("\t- type: {}".format(type(content)))
-                                                    print("\t- content: {}".format(content))
-                                                            print("\t- utf8 content: {}".format(content.decode('utf-8')))
+if __name__ == "__main__":
+        with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+                    html = response.read()
+                            print('Body response:')
+                                    print('\t- type: {}'.format(type(html)))
+                                            print('\t- content: {}'.format(html))
+                                                    print('\t- utf8 content: {}'.format(html.decode("utf-8")))
