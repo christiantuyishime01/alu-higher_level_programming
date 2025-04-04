@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-"""Defines an integer addition function."""
+''' Integer addition in test driven development'''
 
 
 def add_integer(a, b=98):
-    """This function adds two integers
-
-    :param a:The first integer
-    :type a: int
-    :param b: The second integer whose default value is 98
-    :type b: int
-    :returns: The addition of a and b
-    :rtype: int
-    :Raises: TypeError if either a or b is not an integer and not a float
+    """Return the integer addition of a and b.
+    Float arguments are typecasted to ints before addition is performed.
+    Raises:
+    TypeError: If either of a or b is a non-integer and non-float.
     """
     if ((not isinstance(a, int) and not isinstance(a, float))):
         raise TypeError("a must be an integer")
